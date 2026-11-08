@@ -24,6 +24,10 @@ export default function RootLayout() {
       >
         <Stack.Screen name="index" options={{ title: 'Spearhead Armies' }} />
         <Stack.Screen
+          name="rules"
+          options={{ title: 'Spearhead Reference' }}
+        />
+        <Stack.Screen
           name="spearhead/[slug]"
           options={{ title: 'Army Details' }}
         />

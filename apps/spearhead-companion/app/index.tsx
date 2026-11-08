@@ -86,6 +86,20 @@ export default function SpearheadListScreen() {
         Tap an army to view roster, weapons, and abilities.
       </Text>
 
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push('/rules')}
+        style={({ pressed }) => [
+          styles.rulesButton,
+          pressed && styles.rulesButtonPressed,
+        ]}
+      >
+        <Text style={styles.rulesButtonTitle}>Rules reference</Text>
+        <Text style={styles.rulesButtonSubtitle}>
+          Deployment, phases, core abilities, and more
+        </Text>
+      </Pressable>
+
       <TextInput
         value={query}
         onChangeText={setQuery}
@@ -150,6 +164,26 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
     marginBottom: 8,
+  },
+  rulesButton: {
+    backgroundColor: colors.accent,
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 18,
+  },
+  rulesButtonPressed: {
+    opacity: 0.88,
+  },
+  rulesButtonTitle: {
+    color: colors.accentText,
+    fontSize: 18,
+    fontWeight: '700',
+  },
+  rulesButtonSubtitle: {
+    color: colors.accentText,
+    opacity: 0.85,
+    fontSize: 14,
+    marginTop: 4,
   },
   search: {
     backgroundColor: colors.surface,
